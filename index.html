@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=========== CDN LINKS ===========-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="prism/prism.css">
+    <script src="prism/prism.js"></script>
+    <title>Learn Bootstrap</title>
+
+
+    <!--=========== CSS ===========-->
+    <style>
+      section::before{
+      display: block;
+      content: '';
+      height: 50px;
+    }
+    .code-getstart{
+      height:260px;
+      overflow: auto;
+    }
+    
+    .blank-space::before{
+      display: block;
+      content: '';
+      height:50px;
+    }
+    
+    .scrollspy-example {
+      position: relative;
+      height: 300px;
+      margin-top: .5rem;
+      overflow: auto;
+    }
+    
+    .custom-shape-divider-bottom-1650463890 {
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        transform: rotate(180deg);
+    }
+    
+    .custom-shape-divider-bottom-1650463890 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 136px;
+        transform: rotateY(180deg);
+    }
+    
+    .custom-shape-divider-bottom-1650463890 .shape-fill {
+        fill: #f8f9fa;
+    }
+    </style>
+
+</head>
+<body data-bs-spy="scroll">
+  <!--============ NAVBAR ==============-->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top px-3" aria-label="Navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="#"><img src="images/bootstrap-logo.svg" width="38" height="30" class="d-inline-block align-top" alt="Bootstrap" loading="lazy"> Learn Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#questions">Questions</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Cheatsheet</a>
+            <ul class="dropdown-menu text-sm" aria-labelledby="dropdown">
+              <li><a class="dropdown-item" href="#cheatsheet">Get Started</a></li>
+              <li><a class="dropdown-item" href="#typography">Typography</a></li>
+              <li><a class="dropdown-item" href="#buttons">Buttons</a></li>
+              <li><a class="dropdown-item" href="#cards">Cards</a></li>
+              <li><a class="dropdown-item" href="#images">Images</a></li>
+              <li><a class="dropdown-item" href="#forms">Forms</a></li>
+              <li><a class="dropdown-item" href="#input-group">Input Group</a></li>
+              <li><a class="dropdown-item" href="#validation">Validation</a></li>
+              <li><a class="dropdown-item" href="#accordion">Accordion</a></li>
+              <li><a class="dropdown-item" href="#modal">Modal</a></li>
+              <li><a class="dropdown-item" href="#breadcrumb">Breadcrumb</a></li>
+              <li><a class="dropdown-item" href="#pagination">Pagination</a></li>
+              <li><a class="dropdown-item" href="#tables">Tables</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <!--============== HEADER ===============-->
+  <section class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start">
+    <div class="container">
+     <div class="d-sm-flex align-items-center  justify-content-between">
+       <div>
+        <h1>I'm <span class="text-primary">Learning Bootstrap</span></h1>
+        <p class="lead my-4">A compilation of Bootstrap Codes that I learned. With a few clicks, you can easily copy the codes of Bootstrap Forms, Cards, Modals, Tables, and more!</p>
+        <a href="#about" class="btn mb-4 btn-outline-info btn-lg" role="button">Learn More</a>
+       </div>
+       <img class="img-fluid w-50" src="images/responsive.svg" alt=""/>
+     </div>
+    </div>
+  </section>
+  <!--========== CAROUSEL ===========-->
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+     <div class="carousel-indicators">
+       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+     </div>
+     <div class="carousel-inner">
+       <div class="carousel-item active">
+        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><style>
+          .path-0{
+            animation:pathAnim-0 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+          }
+          @keyframes pathAnim-0{
+            0%{
+              d: path("M 0,400 C 0,400 0,200 0,200 C 81.21538461538461,188.74102564102566 162.43076923076922,177.4820512820513 242,198 C 321.5692307692308,218.5179487179487 399.4923076923077,270.8128205128205 468,264 C 536.5076923076923,257.1871794871795 595.6,191.26666666666665 678,190 C 760.4,188.73333333333335 866.1076923076923,252.12051282051283 953,259 C 1039.8923076923077,265.87948717948717 1107.9692307692308,216.25128205128203 1186,197 C 1264.0307692307692,177.74871794871797 1352.0153846153846,188.87435897435898 1440,200 C 1440,200 1440,400 1440,400 Z");
+            }
+            25%{
+              d: path("M 0,400 C 0,400 0,200 0,200 C 68.2051282051282,156.5846153846154 136.4102564102564,113.16923076923078 214,137 C 291.5897435897436,160.83076923076922 378.56410256410254,251.9076923076923 469,256 C 559.4358974358975,260.0923076923077 653.3333333333334,177.2 745,175 C 836.6666666666666,172.8 926.102564102564,251.29230769230767 989,248 C 1051.897435897436,244.70769230769233 1088.2564102564102,159.63076923076923 1159,138 C 1229.7435897435898,116.36923076923077 1334.871794871795,158.18461538461537 1440,200 C 1440,200 1440,400 1440,400 Z");
+            }
+            50%{
+              d: path("M 0,400 C 0,400 0,200 0,200 C 62.65384615384616,152.97179487179488 125.30769230769232,105.94358974358974 196,132 C 266.6923076923077,158.05641025641026 345.4230769230769,257.19743589743587 436,264 C 526.5769230769231,270.80256410256413 628.9999999999999,185.26666666666665 718,154 C 807.0000000000001,122.73333333333333 882.5769230769231,145.73589743589744 969,156 C 1055.423076923077,166.26410256410256 1152.6923076923078,163.7897435897436 1233,169 C 1313.3076923076922,174.2102564102564 1376.6538461538462,187.1051282051282 1440,200 C 1440,200 1440,400 1440,400 Z");
+            }
+            75%{
+              d: path("M 0,400 C 0,400 0,200 0,200 C 62.471794871794856,195.5846153846154 124.94358974358971,191.16923076923078 216,200 C 307.0564102564103,208.83076923076922 426.697435897436,230.9076923076923 508,244 C 589.302564102564,257.0923076923077 632.2666666666667,261.20000000000005 695,261 C 757.7333333333333,260.79999999999995 840.2358974358976,256.29230769230765 923,258 C 1005.7641025641024,259.70769230769235 1088.7897435897435,267.63076923076926 1175,259 C 1261.2102564102565,250.36923076923077 1350.6051282051283,225.18461538461537 1440,200 C 1440,200 1440,400 1440,400 Z");
+            }
+            100%{
+              d: path("M 0,400 C 0,400 0,200 0,200 C 81.21538461538461,188.74102564102566 162.43076923076922,177.4820512820513 242,198 C 321.5692307692308,218.5179487179487 399.4923076923077,270.8128205128205 468,264 C 536.5076923076923,257.1871794871795 595.6,191.26666666666665 678,190 C 760.4,188.73333333333335 866.1076923076923,252.12051282051283 953,259 C 1039.8923076923077,265.87948717948717 1107.9692307692308,216.25128205128203 1186,197 C 1264.0307692307692,177.74871794871797 1352.0153846153846,188.87435897435898 1440,200 C 1440,200 1440,400 1440,400 Z");
+            }
+          }</style><path d="M 0,400 C 0,400 0,200 0,200 C 81.21538461538461,188.74102564102566 162.43076923076922,177.4820512820513 242,198 C 321.5692307692308,218.5179487179487 399.4923076923077,270.8128205128205 468,264 C 536.5076923076923,257.1871794871795 595.6,191.26666666666665 678,190 C 760.4,188.73333333333335 866.1076923076923,252.12051282051283 953,259 C 1039.8923076923077,265.87948717948717 1107.9692307692308,216.25128205128203 1186,197 C 1264.0307692307692,177.74871794871797 1352.0153846153846,188.87435897435898 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#212529ff" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
+       </div>
+       
+       <div class="carousel-item mb-5">
+         <img class="img-fluid" src="images/slide1.png" alt=""/>
+       </div>
+       <div class="carousel-item mb-5">
+         <img class="img-fluid" src="images/slide2.png" alt=""/>
+       </div>
+     </div>
+     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="prev">
+       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Previous</span>
+     </button>
+     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"  data-bs-slide="next">
+       <span class="carousel-control-next-icon" aria-hidden="true"></span>
+       <span class="visually-hidden">Next</span>
+     </button>
+   </div>
+   
+   <!--============= ABOUT ============-->
+  <section id="about" class="px-5">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md">
+          <img src="images/programming.svg" class="img-fluid">
+        </div>
+        <div class="col-md p-5">
+          <h2>About This Website</h2>
+          <p class="lead">
+            I created this website to practice what I'd learned about bootstrap and gain experience from it. The website is not about Bootstrap template codes, but rather a playground for me to practice bootstrap. That is why the title displayed is "learning" instead of cheatsheet. Only HTML, a few CSS codes, and mostly Bootstrap were used.
+          </p>
+          <nav>
+          <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Content</button>
+            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Cheatsheet</button>
+            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Get in touch</button>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <p><strong>It's all about Bootstrap.</strong>  This website contains questions as well as easy-to-copy Bootstrap codes for forms, cards, buttons, modals, tables, validation forms, accordions, responsive images, and more. More content will be added in the future. Is there a code you'd like to be added?<br> <strong>Ask me here:</strong> <a href="https://www.facebook.com/shanedelmoira.mantua.7" target="_blank"><i class="bi bi-facebook text-dark mx-1"></i></a> <a href="mailto:shanemantua3@gmail.com" target="_blank"><i class="bi bi-envelope-fill text-dark mx-1"></i></a></p>
+          </div>
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <p><strong>I added a cheatsheet to easily get the codes I need, as well as for programmers who use bootstrap.</strong> As the saying goes, a website isn't a website unless it has visitors. It will be much easier and faster to create a website if you use the cheatsheet. So feel free to drop by whenever you want. (｡•̀ᴗ-)✧</p>
+          </div>
+          <div class="tab-pane fade lead" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <p><strong>Hello, I'm Shane Del Moira and the creator of this website.</strong></p>
+            <p class="py-2 lead text-center">
+            Visit my <a href="https://devshanemantua.github.io/ShaneM-Portfolio/" target="_blank" class="text-decoration-none text-warning"><strong>Personal Website</strong></a><br>
+            <a href="https://www.linkedin.com/in/ShanedelmoiraMantua" target="_blank"> <i class="bi bi-linkedin text-primary mx-2"></i></a>
+            <a href="https://github.com/devShaneMantua" target="_blank"><i class="bi bi-github text-dark mx-2"></i></a>
+            <a href="https://www.facebook.com/shanedelmoira.mantua.7" target="_blank"><i class="bi bi-facebook text-primary mx-2"></i></a>
+            <a href="mailto:shanemantua3@gmail.com" target="_blank"><i class="bi bi-envelope-fill text-dark mx-1"></i></a>
+            </p>
+          </div>
+        </div>
+        </div>
+      </div>
+  </section>
+  
+  <!--============= QUESTIONS ==============-->
+  <section id="questions" class="px-5 pt-md-5">
+    <div class="row align-items-center justify-content-between">
+    <div class="col-md-7">
+      <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <!--ITEM 1-->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-one" aria-expanded="false" aria-controls="flush-collapseOne">
+              What is Bootstrap?
+            </button>
+          </h2>
+          <div id="question-one" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#questions">
+            <div class="accordion-body">Bootstrap is a powerful toolkit - <strong>a collection of HTML, CSS, and JavaScript tools for creating and building web pages and web applications.</strong> It is a free and open source project, hosted on GitHub, and originally created by (and for) Twitter.
+            <a href="https://www.toptal.com/front-end/what-is-bootstrap-a-short-tutorial-on-the-what-why-and-how" target="_blank" class="px-2 link-info">Visit</a>
+            </div>
+          </div>
+        </div>
+         <!--ITEM 2-->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-two">
+              Is Bootstrap easy to learn?
+            </button>
+          </h2>
+          <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body">Overall, <strong>Bootstrap is not hard to learn.</strong> Its simplicity has made Bootstrap the most used CSS framework in the world and 86% of developers stating they would continue using it. Bootstrap is easy to use, has excellent documentation, and has fantastic community support.
+            <a href="https://developerpitstop.com/is-bootstrap-hard-to-learn/" target="_blank" class="px-2 link-info">Visit</a>
+            </div>
+          </div>
+        </div>
+         <!--ITEM 3-->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-three">
+              What should i know before using Bootstrap?
+            </button>
+          </h2>
+          <div id="question-three" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#questions">
+            <div class="accordion-body">
+              Before you jump in the deep end and start to learn Bootstrap, you need to make sure that you're familiar with and fluent in the main front-end languages - <strong>HTML, CSS, and JavaScript.</strong> Using Bootstrap simply makes it easier for you to build and edit websites using these three languages.
+            <a href="https://www.bitdegree.org/tutorials/learn-bootstrap/" target="_blank" class="px-2 link-info">Visit</a>
+            </div>
+          </div>
+        </div>
+        <!--ITEM 4-->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-four">
+              What is difference between Bootstrap and CSS?
+            </button>
+          </h2>
+          <div id="question-four" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#questions">
+            <div class="accordion-body">
+              The main difference between Bootstrap and CSS is that the <strong>Bootstrap is a front-end framework while CSS is a style sheet language.</strong> The World Wide Web (WWW) consist of a large number of websites. The main programming languages required to build websites are HTML, CSS, and JavaScript.
+              <a href="https://pediaa.com/difference-between-bootstrap-and-css/#:~:text=The%20main%20difference%20between%20Bootstrap,HTML%2C%20CSS%2C%20and%20JavaScript." target="_blank" class="px-2 link-info">Visit</a>
+            </div>
+          </div>
+        </div>
+       <!--ITEM 5-->
+       <div class="accordion-item">
+         <h2 class="accordion-header" id="flush-headingFive">
+           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-Five">
+             What Companies use Bootstrap?
+           </button>
+         </h2>
+         <div id="question-Five" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#questions">
+           <div class="accordion-body">
+           42902 companies reportedly use Bootstrap in their tech stacks, including <strong> Twitter, Spotify, Udemy, Linkedin, Robinhood, Stackshare, Lyft and Postman.</strong>
+            <a href="https://stackshare.io/bootstrap" target="_blank" class="px-2 link-info">Visit</a>
+          </div>
+         </div>
+       </div>
+        <!--ITEM 6-->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingSix">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#question-six">
+              How do I use Bootstrap on my website?
+            </button>
+          </h2>
+          <div id="question-six" class="accordion-collapse collapse" data-bs-parent="#questions">
+            <div class="accordion-body"> <strong>You can get started by visiting <a href="https://getbootstrap.com/" target="_blank" class="link-info">getbootstrap.com</a> or use the cdn below.</strong> Bootstrap contains HTML, CSS and (optionally) JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.
+            
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="col-md-5">
+      <img src="images/question.svg" class="img-fluid">
+    </div>
+    </div>
+    
+  </section>
+    
+ <div class="custom-shape-divider-bottom-1650463890">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+    </svg>
+</div>
+  <!--============== CHEATSHEET ===============-->
+  <section id="cheatsheet" class="p-5 bg-light">
+    <div class="row align-items-center justify-content-between">
+      <h1 class="text-center mb-4"><a href="https://getbootstrap.com/docs/5.1/getting-started/introduction/" target="_blank" class="text-decoration-none">Bootstrap</a> Cheatsheet</h1>
+     <div class="col-md-6 code-getstart">
+      <pre><h4 class="text-center">Get started by using CDN</h4><code class="language-html">&lt;!-- Bootstrap CSS --&gt;
+&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3&quot; crossorigin=&quot;anonymous&quot;&gt;
+
+&lt;!-- Bootstrap JS --&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+
+&lt;!-- Bootstrap Icons --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css&quot;&gt;</code></pre>
+     </div>
+     <div class="col-md-6 code-getstart">
+       <pre><h4 class="text-center">Starter Template</h4><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3&quot; crossorigin=&quot;anonymous&quot;&gt;
+
+    &lt;title&gt;Hello, world!&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+
+    &lt;!-- Bootstrap JavaScript --&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+     </div>
+     
+    <!--Typography-->
+     <div class="col-md-6 py-5">
+       <div>
+         <p class="lead">This is a lead paragraph. It stands out from regular paragraphs.</p>
+        <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+        <p><del>This line of text is meant to be treated as deleted text.</del></p>
+        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+        <p><u>This line of text will render as underlined.</u></p>
+        <p><small>This line of text is meant to be treated as fine print.</small></p>
+        <p><strong>This line rendered as bold text.</strong></p>
+        <p><em>This line rendered as italicized text.</em></p>
+      </div>
+     </div>
+     <div id="typography" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <div class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/content/typography/" target="_blank">Typography</a></h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scroll-typography1">Lead</a></li>
+                  <li><a class="dropdown-item" href="#scroll-typography2">Highlight</a></li>
+                  <li><a class="dropdown-item" href="#scroll-typography3">Deleted</a></li>
+                  <li><a class="dropdown-item" href="#scroll-typography4">Not Accurate</a></li>
+                  <li><a class="dropdown-item" href="#scroll-typography5">Addition</a></li>
+                  <li><a class="dropdown-item" href="#scroll-typography6">Underlined</a></li>
+                  <li><a class="dropdown-item" href="#scroll-typography7">Fine Print</a></li>
+                  <li><a class="dropdown-item" href="#scroll-typography8">Bold</a></li>
+                  <li><a class="dropdown-item" href="#scroll-typography9">Italicized</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-typography1">&lt;Lead&gt;</h4><code class="language-html">&lt;p class=&quot;lead&quot;&gt;This is a lead paragraph. It stands out from regular paragraphs.&lt;/p&gt;</code></pre>
+           
+              <pre><h4 id="scroll-typography2">&lt;Mark&gt;</h4><code class="language-html">&lt;p&gt;You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text.&lt;/p&gt;</code></pre>
+            
+              <pre><h4 id="scroll-typography3">&lt;Del&gt;</h4><code class="language-html">&lt;p&gt;&lt;del&gt;This line of text is meant to be treated as deleted text.&lt;/del&gt;&lt;/p&gt;</code></pre>
+            
+              <pre><h4 id="scroll-typography4">&lt;S&gt;</h4><code class="language-html">&lt;p&gt;&lt;s&gt;This line of text is meant to be treated as no longer accurate.&lt;/s&gt;&lt;/p&gt;</code></pre>
+            
+              <pre><h4 id="scroll-typography5">&lt;Ins&gt;</h4><code class="language-html">&lt;p&gt;&lt;ins&gt;This line of text is meant to be treated as an addition to the document.&lt;/ins&gt;&lt;/p&gt;</code></pre>
+              
+              <pre><h4 id="scroll-typography6">&lt;U&gt;</h4><code class="language-html">&lt;p&gt;&lt;u&gt;This line of text will render as underlined.&lt;/u&gt;&lt;/p&gt;</code></pre>
+              
+              <pre><h4 id="scroll-typography7">&lt;Small&gt;</h4><code class="language-html">&lt;p&gt;&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;&lt;/p&gt;</code></pre>
+              
+              <pre><h4 id="scroll-typography8">&lt;Strong&gt;</h4><code class="language-html">&lt;p&gt;&lt;strong&gt;This line rendered as bold text.&lt;/strong&gt;&lt;/p&gt;</code></pre>
+              
+              <pre><h4 id="scroll-typography9">&lt;Em&gt;</h4><code class="language-html">&lt;p&gt;&lt;em&gt;This line rendered as italicized text.&lt;/em&gt;&lt;/p&gt;</code></pre>
+              
+          </div>
+        </div>
+     </div>
+     
+    <!--Buttons-->
+     <div class="col-md-6 py-5">
+       <div>
+         <div class="btn-example p-2 text-center">
+        
+        <button type="button" class="btn btn-primary m-1">Primary</button>
+        <button type="button" class="btn btn-secondary m-1">Secondary</button>
+        <button type="button" class="btn btn-success m-1">Success</button>
+        <button type="button" class="btn btn-danger m-1">Danger</button>
+        <button type="button" class="btn btn-warning m-1">Warning</button>
+        <button type="button" class="btn btn-info m-1">Info</button>
+        <button type="button" class="btn btn-light m-1">Light</button>
+        <button type="button" class="btn btn-dark m-1">Dark</button>
+        <button type="button" class="btn btn-outline-dark m-1">Dark</button>
+        <button type="button" class="btn btn-link m-1">Link</button>
+        </div>
+
+        <div class="btn-example p-2 text-center">
+        <button type="button" class="btn btn-outline-primary m-1">Primary</button>
+        <button type="button" class="btn btn-outline-secondary m-1">Secondary</button>
+        <button type="button" class="btn btn-outline-success m-1">Success</button>
+        <button type="button" class="btn btn-outline-danger m-1">Danger</button>
+        <button type="button" class="btn btn-outline-warning m-1">Warning</button>
+        <button type="button" class="btn btn-outline-info m-1">Info</button>
+        <button type="button" class="btn btn-outline-light m-1">Light</button>
+        </div>
+
+        <div class="btn-example text-center">
+        <button type="button" class="btn btn-primary btn-sm m-1">Small button</button>
+        <button type="button" class="btn btn-primary m-1">Standard button</button>
+        <button type="button" class="btn btn-primary btn-lg m-1">Large button</button>
+        </div>
+       </div>
+     </div>
+     <div id="buttons" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <div class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/components/buttons/" target="_blank">Buttons</a></h3>
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#scroll-buttons1">Solid</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#scroll-buttons2">Outline</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#scroll-buttons3">Size</a>
+              </li>
+            </ul>
+          </div>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-buttons1">&lt;Solid Buttons&gt;</h4><code class="language-html">
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot;&gt;Secondary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;Success&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-danger&quot;&gt;Danger&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;Warning&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-info&quot;&gt;Info&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-light&quot;&gt;Light&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-dark&quot;&gt;Dark&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-dark&quot;&gt;Dark&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-link&quot;&gt;Link&lt;/button&gt;</code></pre>
+           
+              <pre><h4 id="scroll-buttons2">&lt;Outlined Buttons&gt;</h4><code class="language-html">
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-primary&quot;&gt;Primary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-secondary&quot;&gt;Secondary&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-success&quot;&gt;Success&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-danger&quot;&gt;Danger&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-warning&quot;&gt;Warning&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-info&quot;&gt;Info&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-light&quot;&gt;Light&lt;/button&gt;</code></pre>
+            
+              <pre><h4 id="scroll-buttons3">&lt;Sizing Buttons&gt;</h4><code class="language-html">
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Small button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Standard button&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Large button&lt;/button&gt;</code></pre>
+              
+          </div>
+        </div>
+     </div>
+     
+    <!--Cards-->
+     <div class="col-md-6 py-5">
+        <div class="bd-example">
+        <div class="row  row-cols-1 row-cols-md-2 g-4">
+          <div class="col">
+            <div class="card">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text></svg>
+
+              <div class="card-body">
+                <h5 class="card-title">Card One</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Card Two</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+              <div class="card-footer text-muted">
+                2 days ago
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Card Three</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+              </ul>
+              <div class="card-body">
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <svg class="bd-placeholder-img" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em"></text></svg>
+
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card Four</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+     </div>
+     <div id="cards" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/components/card/" target="_blank">Cards</a></h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scrollcard1">Card 1</a></li>
+                  <li><a class="dropdown-item" href="#scrollcard2">Card 2</a></li>
+                  <li><a class="dropdown-item" href="#scrollcard3">Card 3</a></li>
+                  <li><a class="dropdown-item" href="#scrollcard4">Card 4</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scrollcard1">&lt;Card One&gt;</h4><code class="language-html">
+&lt;div class=&quot;col&quot;&gt;
+  &lt;div class=&quot;card&quot;&gt;
+    &lt;svg class=&quot;bd-placeholder-img card-img-top&quot; width=&quot;100%&quot; height=&quot;180&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; aria-label=&quot;Placeholder: Image cap&quot; preserveAspectRatio=&quot;xMidYMid slice&quot; focusable=&quot;false&quot;&gt;&lt;title&gt;Placeholder&lt;/title&gt;&lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;#868e96&quot;/&gt;&lt;text x=&quot;50%&quot; y=&quot;50%&quot; fill=&quot;#dee2e6&quot; dy=&quot;.3em&quot;&gt;Image cap&lt;/text&gt;&lt;/svg&gt;
+
+    &lt;div class=&quot;card-body&quot;&gt;
+      &lt;h5 class=&quot;card-title&quot;&gt;Card title&lt;/h5&gt;
+      &lt;p class=&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p&gt;
+      &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+           
+              <pre><h4 id="scrollcard2">&lt;Card Two&gt;</h4><code class="language-html">
+&lt;div class=&quot;col&quot;&gt;
+  &lt;div class=&quot;card&quot;&gt;
+    &lt;div class=&quot;card-header&quot;&gt;
+      Featured
+    &lt;/div&gt;
+    &lt;div class=&quot;card-body&quot;&gt;
+      &lt;h5 class=&quot;card-title&quot;&gt;Card title&lt;/h5&gt;
+      &lt;p class=&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p&gt;
+      &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;card-footer text-muted&quot;&gt;
+      2 days ago
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+              <pre><h4 id="scrollcard3">&lt;Card Three&gt;</h4><code class="language-html">
+&lt;div class=&quot;col&quot;&gt;
+  &lt;div class=&quot;card&quot;&gt;
+    &lt;div class=&quot;card-body&quot;&gt;
+      &lt;h5 class=&quot;card-title&quot;&gt;Card title&lt;/h5&gt;
+      &lt;p class=&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card's content.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;ul class=&quot;list-group list-group-flush&quot;&gt;
+      &lt;li class=&quot;list-group-item&quot;&gt;An item&lt;/li&gt;
+      &lt;li class=&quot;list-group-item&quot;&gt;A second item&lt;/li&gt;
+      &lt;li class=&quot;list-group-item&quot;&gt;A third item&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div class=&quot;card-body&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;card-link&quot;&gt;Card link&lt;/a&gt;
+      &lt;a href=&quot;#&quot; class=&quot;card-link&quot;&gt;Another link&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+              <pre><h4 id="scrollcard4">&lt;Card Four&gt;</h4><code class="language-html">
+&lt;div class=&quot;col&quot;&gt;
+  &lt;div class=&quot;card&quot;&gt;
+    &lt;div class=&quot;row g-0&quot;&gt;
+      &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;svg class=&quot;bd-placeholder-img&quot; width=&quot;100%&quot; height=&quot;250&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; role=&quot;img&quot; aria-label=&quot;Placeholder: Image&quot; preserveAspectRatio=&quot;xMidYMid slice&quot; focusable=&quot;false&quot;&gt;&lt;title&gt;Placeholder&lt;/title&gt;&lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;#868e96&quot;/&gt;&lt;text x=&quot;50%&quot; y=&quot;50%&quot; fill=&quot;#dee2e6&quot; dy=&quot;.3em&quot;&gt;Image&lt;/text&gt;&lt;/svg&gt;
+
+      &lt;/div&gt;
+      &lt;div class=&quot;col-md-8&quot;&gt;
+        &lt;div class=&quot;card-body&quot;&gt;
+          &lt;h5 class=&quot;card-title&quot;&gt;Card title&lt;/h5&gt;
+          &lt;p class=&quot;card-text&quot;&gt;This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.&lt;/p&gt;
+          &lt;p class=&quot;card-text&quot;&gt;&lt;small class=&quot;text-muted&quot;&gt;Last updated 3 mins ago&lt;/small&gt;&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+              
+          </div>
+        </div>
+     </div>
+     
+    <!--Images-->
+     <div class="col-md-6 py-5">
+        <div class="bd-example">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg img-fluid" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="40%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
+        </div>
+
+        <div class="bd-example">
+        <svg class="bd-placeholder-img img-thumbnail" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false"><title>A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera</title><rect width="100%" height="100%" fill="#868e96"/><text x="35%" y="50%" fill="#dee2e6" dy=".3em">200x200</text></svg>
+        <svg class="bd-placeholder-img img-thumbnail" width="350" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera: 350x200" preserveAspectRatio="xMidYMid slice" focusable="false"><title>A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera</title><rect width="100%" height="100%" fill="#868e96"/><text x="35%" y="50%" fill="#dee2e6" dy=".3em">350x200</text></svg>
+        </div>
+     </div>
+     <div id="images" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/content/images/" target="_blank">Images</a></h3>
+          </nav>
+        <div class="scrollspy-example" >
+              <pre><h4 id="scrollimage1">&lt;Responsive&gt;</h4><code class="language-html">
+&lt;img src=&quot;...&quot; class=&quot;img-fluid&quot; alt=&quot;...&quot;&gt;</code></pre>
+           
+              <pre><h4 id="scrollimage2">&lt;Image thumbnails&gt;</h4><code class="language-html">
+&lt;img src=&quot;...&quot; class=&quot;img-thumbnail&quot; alt=&quot;...&quot;&gt;</code></pre>
+
+             <pre><h4 id="scrollimage3">&lt;Picture&gt;</h4><code class="language-html">
+&lt;picture&gt;
+  &lt;source srcset=&quot;...&quot; type=&quot;image/svg+xml&quot;&gt;
+  &lt;img src=&quot;...&quot; class=&quot;img-fluid img-thumbnail&quot; alt=&quot;...&quot;&gt;
+&lt;/picture&gt;</code></pre>
+              
+          </div>
+        </div>
+     </div>
+     
+    <!--Forms-->
+     <div class="col-md-6 py-5">
+       <div id="forms">
+         <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Type your Email here.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <fieldset class="mb-3">
+            <legend>Radios buttons</legend>
+            <div class="form-check">
+              <input type="radio" name="radios" class="form-check-input" id="exampleRadio1">
+              <label class="form-check-label" for="exampleRadio1">Default radio</label>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="radio" name="radios" class="form-check-input" id="exampleRadio2">
+              <label class="form-check-label" for="exampleRadio2">Another radio</label>
+            </div>
+          </fieldset>
+          <div class="mb-3">
+            <label class="form-label" for="customFile">Upload</label>
+            <input type="file" class="form-control" id="customFile">
+          </div>
+          <div class="mb-3 form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+            <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+          </div>
+          <div class="mb-3">
+            <label for="customRange3" class="form-label">Example range</label>
+            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+       </div>
+     </div>
+     <div class="col-md-6 p-5">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/forms/overview/" target="_blank">Forms</a></h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scroll-forms1">Email Address</a></li>
+                  <li><a class="dropdown-item" href="#scroll-forms2">Password</a></li>
+                  <li><a class="dropdown-item" href="#scroll-forms3">Checkbox</a></li>
+                  <li><a class="dropdown-item" href="#scroll-forms4">Radio Buttons</a></li>
+                  <li><a class="dropdown-item" href="#scroll-forms5">Upload Files</a></li>
+                  <li><a class="dropdown-item" href="#scroll-forms6">Checked Switch</a></li>
+                  <li><a class="dropdown-item" href="#scroll-forms7">Example Range</a></li>
+                  <li><a class="dropdown-item" href="#scroll-forms8">Submit Button</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-forms1">&lt;Email Address&gt;</h4><code class="language-html">
+&lt;form&gt;
+  &lt;div class=&quot;mb-3&quot;&gt;
+    &lt;label for=&quot;exampleInputEmail1&quot; class=&quot;form-label&quot;&gt;Email address&lt;/label&gt;
+    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;exampleInputEmail1&quot; aria-describedby=&quot;emailHelp&quot;&gt;
+    &lt;div id=&quot;emailHelp&quot; class=&quot;form-text&quot;&gt;Type your Email here.&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+           
+              <pre><h4 id="scroll-forms2">&lt;Password&gt;</h4><code class="language-html">
+&lt;form&gt;
+  &lt;div class=&quot;mb-3&quot;&gt;
+    &lt;label for=&quot;exampleInputPassword1&quot; class=&quot;form-label&quot;&gt;Password&lt;/label&gt;
+    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;exampleInputPassword1&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            
+              <pre><h4 id="scroll-forms3">&lt;Checkbox&gt;</h4><code class="language-html">
+&lt;form&gt;
+  &lt;div class=&quot;mb-3 form-check&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;form-check-input&quot; id=&quot;exampleCheck1&quot;&gt;
+    &lt;label class=&quot;form-check-label&quot; for=&quot;exampleCheck1&quot;&gt;Check me out&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+            
+              <pre><h4 id="scroll-forms4">&lt;Radio Buttons&gt;</h4><code class="language-html">
+&lt;form&gt;
+  &lt;fieldset class=&quot;mb-3&quot;&gt;
+    &lt;legend&gt;Radios buttons&lt;/legend&gt;
+    &lt;div class=&quot;form-check&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;radios&quot; class=&quot;form-check-input&quot; id=&quot;exampleRadio1&quot;&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;exampleRadio1&quot;&gt;Default radio&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;mb-3 form-check&quot;&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;radios&quot; class=&quot;form-check-input&quot; id=&quot;exampleRadio2&quot;&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;exampleRadio2&quot;&gt;Another radio&lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            
+              <pre><h4 id="scroll-forms5">&lt;Upload Files&gt;</h4><code class="language-html">
+&lt;form&gt;
+  &lt;div class=&quot;mb-3&quot;&gt;
+    &lt;label class=&quot;form-label&quot; for=&quot;customFile&quot;&gt;Upload&lt;/label&gt;
+    &lt;input type=&quot;file&quot; class=&quot;form-control&quot; id=&quot;customFile&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+              
+              <pre><h4 id="scroll-forms6">&lt;Checked Switch&gt;</h4><code class="language-html">
+&lt;form&gt;
+  &lt;div class=&quot;mb-3 form-check form-switch&quot;&gt;
+    &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; role=&quot;switch&quot; id=&quot;flexSwitchCheckChecked&quot; checked&gt;
+    &lt;label class=&quot;form-check-label&quot; for=&quot;flexSwitchCheckChecked&quot;&gt;Checked switch checkbox input&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+              
+              <pre><h4 id="scroll-forms7">&lt;Example Range&gt;</h4><code class="language-html">
+&lt;form&gt;
+  &lt;div class=&quot;mb-3&quot;&gt;
+    &lt;label for=&quot;customRange3&quot; class=&quot;form-label&quot;&gt;Example range&lt;/label&gt;
+    &lt;input type=&quot;range&quot; class=&quot;form-range&quot; min=&quot;0&quot; max=&quot;5&quot; step=&quot;0.5&quot; id=&quot;customRange3&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+              
+              <pre><h4 id="scroll-forms8">&lt;Submit Button&gt;</h4><code class="language-html">
+&lt;button type=&quot;submit&quot; class=&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;</code></pre>
+              
+          </div>
+        </div>
+     </div>
+     
+    <!--Input Group-->
+     <div class="col-md-6 py-5">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">@</span>
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">@example.com</span>
+          </div>
+          <label for="basic-url" class="form-label">Your vanity URL</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">First and last name</span>
+            <input type="text" aria-label="First name" class="form-control">
+            <input type="text" aria-label="Last name" class="form-control">
+          </div>
+          <div class="input-group">
+            <span class="input-group-text">With textarea</span>
+            <textarea class="form-control" aria-label="With textarea"></textarea>
+          </div>
+        <form class="pt-3">
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Email address with floating label</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password with floating label</label>
+          </div>
+        </form>
+        
+     </div>
+     <div id="input-group" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/forms/input-group/" target="_blank">Input Groups</a></h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scroll-input1">Username Input</a></li>
+                  <li><a class="dropdown-item" href="#scroll-input2">Recipient's</a></li>
+                  <li><a class="dropdown-item" href="#scroll-input3">URL</a></li>
+                  <li><a class="dropdown-item" href="#scroll-input4">Multiple Inputs</a></li>
+                  <li><a class="dropdown-item" href="#scroll-input5">Text Area</a></li>
+                  <li><a class="dropdown-item" href="#scroll-input6">Floating Labels</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-input1">&lt;Username Input&gt;</h4><code class="language-html">
+&lt;div class=&quot;input-group&quot;&gt;
+  &lt;span class=&quot;input-group-text&quot; id=&quot;basic-addon1&quot;&gt;@&lt;/span&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Username&quot; aria-label=&quot;Username&quot; aria-describedby=&quot;basic-addon1&quot;&gt;
+&lt;/div&gt;</code></pre>
+           
+              <pre><h4 id="scroll-input2">&lt;Recipient's username&gt;</h4><code class="language-html">
+&lt;div class=&quot;input-group&quot;&gt;
+  &lt;input type=&quot;text&quot; class=&quot;form-control&quot; placeholder=&quot;Recipient's username&quot; aria-label=&quot;Recipient's username&quot; aria-describedby=&quot;basic-addon2&quot;&gt;
+  &lt;span class=&quot;input-group-text&quot; id=&quot;basic-addon2&quot;&gt;@example.com&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            
+              <pre><h4 id="scroll-input3">&lt;URL&gt;</h4><code class="language-html">
+&lt;label for=&quot;basic-url&quot; class=&quot;form-label&quot;&gt;Your vanity URL&lt;/label&gt;
+  &lt;div class=&quot;input-group&quot;&gt;
+    &lt;span class=&quot;input-group-text&quot; id=&quot;basic-addon3&quot;&gt;https://example.com/users/&lt;/span&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;basic-url&quot; aria-describedby=&quot;basic-addon3&quot;&gt;
+  &lt;/div&gt;</code></pre>
+            
+              <pre><h4 id="scroll-input4">&lt;Multiple Inputs&gt;</h4><code class="language-html">
+&lt;div class=&quot;input-group&quot;&gt;
+  &lt;span class=&quot;input-group-text&quot;&gt;First and last name&lt;/span&gt;
+  &lt;input type=&quot;text&quot; aria-label=&quot;First name&quot; class=&quot;form-control&quot;&gt;
+  &lt;input type=&quot;text&quot; aria-label=&quot;Last name&quot; class=&quot;form-control&quot;&gt;
+&lt;/div&gt;</code></pre>
+
+              <pre><h4 id="scroll-input5">&lt;Text Area&gt;</h4><code class="language-html">
+&lt;div class=&quot;input-group&quot;&gt;
+  &lt;span class=&quot;input-group-text&quot;&gt;With textarea&lt;/span&gt;
+  &lt;textarea class=&quot;form-control&quot; aria-label=&quot;With textarea&quot;&gt;&lt;/textarea&gt;
+&lt;/div&gt;</code></pre>
+
+              <pre><h4 id="scroll-input6">&lt;Floating Labels&gt;</h4><code class="language-html">
+&lt;form&gt;
+  &lt;div class=&quot;form-floating mb-3&quot;&gt;
+    &lt;input type=&quot;email&quot; class=&quot;form-control&quot; id=&quot;floatingInput&quot; placeholder=&quot;name@example.com&quot;&gt;
+    &lt;label for=&quot;floatingInput&quot;&gt;Email address&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;form-floating&quot;&gt;
+    &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;floatingPassword&quot; placeholder=&quot;Password&quot;&gt;
+    &lt;label for=&quot;floatingPassword&quot;&gt;Password&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+          </div>
+        </div>
+     </div>
+     
+     <!--Validation-->
+     <div class="col-md-6 py-5">
+         <form class="row g-3">
+          <div class="col-md-4">
+            <label for="validationServer01" class="form-label">First name</label>
+            <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServer02" class="form-label">Last name</label>
+            <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationServerUsername" class="form-label">Username</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend3">@</span>
+              <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
+              <div class="invalid-feedback">
+                Please choose a username.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="validationServer03" class="form-label">City</label>
+            <input type="text" class="form-control is-invalid" id="validationServer03" required>
+            <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="validationServer04" class="form-label">State</label>
+            <select class="form-select is-invalid" id="validationServer04" required>
+              <option selected disabled value="">Choose...</option>
+              <option>...</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid state.
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="validationServer05" class="form-label">Zip</label>
+            <input type="text" class="form-control is-invalid" id="validationServer05" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+              <label class="form-check-label" for="invalidCheck3">
+                Agree to terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form>
+     </div>
+     <div id="validation" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/forms/validation/" target="_blank">Validation Form</a></h3>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-validation1">&lt;Validation&gt;</h4><code class="language-html">
+&lt;form class=&quot;row g-3&quot;&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    &lt;label for=&quot;validationServer01&quot; class=&quot;form-label&quot;&gt;First name&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control is-valid&quot; id=&quot;validationServer01&quot; value=&quot;Mark&quot; required&gt;
+    &lt;div class=&quot;valid-feedback&quot;&gt;
+      Looks good!
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    &lt;label for=&quot;validationServer02&quot; class=&quot;form-label&quot;&gt;Last name&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control is-valid&quot; id=&quot;validationServer02&quot; value=&quot;Otto&quot; required&gt;
+    &lt;div class=&quot;valid-feedback&quot;&gt;
+      Looks good!
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-4&quot;&gt;
+    &lt;label for=&quot;validationServerUsername&quot; class=&quot;form-label&quot;&gt;Username&lt;/label&gt;
+    &lt;div class=&quot;input-group has-validation&quot;&gt;
+      &lt;span class=&quot;input-group-text&quot; id=&quot;inputGroupPrepend3&quot;&gt;@&lt;/span&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control is-invalid&quot; id=&quot;validationServerUsername&quot; aria-describedby=&quot;inputGroupPrepend3&quot; required&gt;
+      &lt;div class=&quot;invalid-feedback&quot;&gt;
+        Please choose a username.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-6&quot;&gt;
+    &lt;label for=&quot;validationServer03&quot; class=&quot;form-label&quot;&gt;City&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control is-invalid&quot; id=&quot;validationServer03&quot; required&gt;
+    &lt;div class=&quot;invalid-feedback&quot;&gt;
+      Please provide a valid city.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-3&quot;&gt;
+    &lt;label for=&quot;validationServer04&quot; class=&quot;form-label&quot;&gt;State&lt;/label&gt;
+    &lt;select class=&quot;form-select is-invalid&quot; id=&quot;validationServer04&quot; required&gt;
+      &lt;option selected disabled value=&quot;&quot;&gt;Choose...&lt;/option&gt;
+      &lt;option&gt;...&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;div class=&quot;invalid-feedback&quot;&gt;
+      Please select a valid state.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-md-3&quot;&gt;
+    &lt;label for=&quot;validationServer05&quot; class=&quot;form-label&quot;&gt;Zip&lt;/label&gt;
+    &lt;input type=&quot;text&quot; class=&quot;form-control is-invalid&quot; id=&quot;validationServer05&quot; required&gt;
+    &lt;div class=&quot;invalid-feedback&quot;&gt;
+      Please provide a valid zip.
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+    &lt;div class=&quot;form-check&quot;&gt;
+      &lt;input class=&quot;form-check-input is-invalid&quot; type=&quot;checkbox&quot; value=&quot;&quot; id=&quot;invalidCheck3&quot; required&gt;
+      &lt;label class=&quot;form-check-label&quot; for=&quot;invalidCheck3&quot;&gt;
+        Agree to terms and conditions
+      &lt;/label&gt;
+      &lt;div class=&quot;invalid-feedback&quot;&gt;
+        You must agree before submitting.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;col-12&quot;&gt;
+    &lt;button class=&quot;btn btn-primary&quot; type=&quot;submit&quot;&gt;Submit form&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+           
+          </div>
+        </div>
+     </div>
+     
+     <!--Accordion-->
+     <div class="col-md-6 py-5">
+         <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Accordion Item #1
+              </button>
+            </h4>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Accordion Item #2
+              </button>
+            </h4>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h4 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Accordion Item #3
+              </button>
+            </h4>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+     <div id="accordion" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/components/accordion/" target="_blank">Accordion</a></h3>
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#scroll-accordion1">Flush</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#scroll-accordion2">Always Open</a>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-accordion1">&lt;Flush&gt;</h4><code class="language-html">
+&lt;div class=&quot;accordion&quot; id=&quot;accordionExample&quot;&gt;
+ &lt;div class=&quot;accordion-item&quot;&gt;
+   &lt;h4 class=&quot;accordion-header&quot; id=&quot;headingOne&quot;&gt;
+     &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseOne&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;collapseOne&quot;&gt;
+       Accordion Item #1
+     &lt;/button&gt;
+   &lt;/h4&gt;
+   &lt;div id=&quot;collapseOne&quot; class=&quot;accordion-collapse collapse show&quot; aria-labelledby=&quot;headingOne&quot; data-bs-parent=&quot;#accordionExample&quot;&gt;
+     &lt;div class=&quot;accordion-body&quot;&gt;
+       &lt;strong&gt;This is the first item's accordion body.&lt;/strong&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;accordion-item&quot;&gt;
+   &lt;h4 class=&quot;accordion-header&quot; id=&quot;headingTwo&quot;&gt;
+     &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseTwo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapseTwo&quot;&gt;
+       Accordion Item #2
+     &lt;/button&gt;
+   &lt;/h4&gt;
+   &lt;div id=&quot;collapseTwo&quot; class=&quot;accordion-collapse collapse&quot; aria-labelledby=&quot;headingTwo&quot; data-bs-parent=&quot;#accordionExample&quot;&gt;
+     &lt;div class=&quot;accordion-body&quot;&gt;
+       &lt;strong&gt;This is the second item's accordion body.&lt;/strong&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;accordion-item&quot;&gt;
+   &lt;h4 class=&quot;accordion-header&quot; id=&quot;headingThree&quot;&gt;
+     &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#collapseThree&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;collapseThree&quot;&gt;
+       Accordion Item #3
+     &lt;/button&gt;
+   &lt;/h4&gt;
+   &lt;div id=&quot;collapseThree&quot; class=&quot;accordion-collapse collapse&quot; aria-labelledby=&quot;headingThree&quot; data-bs-parent=&quot;#accordionExample&quot;&gt;
+     &lt;div class=&quot;accordion-body&quot;&gt;
+       &lt;strong&gt;This is the third item's accordion body.&lt;/strong&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+     &lt;/div&gt;
+   &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+           
+              <pre><h4 id="scroll-accordion2">&lt;Always Open&gt;</h4><code class="language-html">
+&lt;div class=&quot;accordion&quot; id=&quot;accordionPanelsStayOpenExample&quot;&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;h2 class=&quot;accordion-header&quot; id=&quot;panelsStayOpen-headingOne&quot;&gt;
+      &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#panelsStayOpen-collapseOne&quot; aria-expanded=&quot;true&quot; aria-controls=&quot;panelsStayOpen-collapseOne&quot;&gt;
+        Accordion Item #1
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id=&quot;panelsStayOpen-collapseOne&quot; class=&quot;accordion-collapse collapse show&quot; aria-labelledby=&quot;panelsStayOpen-headingOne&quot;&gt;
+      &lt;div class=&quot;accordion-body&quot;&gt;
+        &lt;strong&gt;This is the first item's accordion body.&lt;/strong&gt; It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;h2 class=&quot;accordion-header&quot; id=&quot;panelsStayOpen-headingTwo&quot;&gt;
+      &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#panelsStayOpen-collapseTwo&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;panelsStayOpen-collapseTwo&quot;&gt;
+        Accordion Item #2
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id=&quot;panelsStayOpen-collapseTwo&quot; class=&quot;accordion-collapse collapse&quot; aria-labelledby=&quot;panelsStayOpen-headingTwo&quot;&gt;
+      &lt;div class=&quot;accordion-body&quot;&gt;
+        &lt;strong&gt;This is the second item's accordion body.&lt;/strong&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;h2 class=&quot;accordion-header&quot; id=&quot;panelsStayOpen-headingThree&quot;&gt;
+      &lt;button class=&quot;accordion-button collapsed&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#panelsStayOpen-collapseThree&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;panelsStayOpen-collapseThree&quot;&gt;
+        Accordion Item #3
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id=&quot;panelsStayOpen-collapseThree&quot; class=&quot;accordion-collapse collapse&quot; aria-labelledby=&quot;panelsStayOpen-headingThree&quot;&gt;
+      &lt;div class=&quot;accordion-body&quot;&gt;
+        &lt;strong&gt;This is the third item's accordion body.&lt;/strong&gt; It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the &lt;code&gt;.accordion-body&lt;/code&gt;, though the transition does limit overflow.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      
+          </div>
+        </div>
+     </div>
+     
+     <!--Modals-->
+     <div class="col-md-6">
+         <div class="">
+          <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModalDefault">
+            Launch demo modal
+          </button>
+          <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#staticBackdropLive">
+            Launch static backdrop modal
+          </button>
+          <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModalCenteredScrollable">
+            Vertically centered scrollable modal
+          </button>
+          <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#exampleModalFullscreen">
+            Full screen
+          </button>
+        </div>
+        
+     </div>
+     <div id="modal" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/components/modal/" target="_blank">Modals</a></h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scroll-modals1">Modal</a></li>
+                  <li><a class="dropdown-item" href="#scroll-modals2">Static Backdrop</a></li>
+                  <li><a class="dropdown-item" href="#scroll-modals3">Scrollable Modal</a></li>
+                  <li><a class="dropdown-item" href="#scroll-modals4">Full Screen</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-modals1">&lt;Modal&gt;</h4><code class="language-html">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#exampleModalDefault&quot;&gt;
+  Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;exampleModalDefault&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;exampleModalLabel&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalLabel&quot;&gt;Modal title&lt;/h5&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        Modal body text goes here..
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-bs-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+           
+              <pre><h4 id="scroll-modals2">&lt;Static Backdrop&gt;</h4><code class="language-html">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#staticBackdrop&quot;&gt;
+  Launch static backdrop modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;staticBackdrop&quot; data-bs-backdrop=&quot;static&quot; data-bs-keyboard=&quot;false&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;staticBackdropLabel&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;h5 class=&quot;modal-title&quot; id=&quot;staticBackdropLabel&quot;&gt;Modal title&lt;/h5&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        &lt;p&gt;I will not close if you click outside me. Don't even try to press escape key.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-bs-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Understood&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            
+              <pre><h4 id="scroll-modals3">&lt;Scrollable Modal&gt;</h4><code class="language-html">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#exampleModalCenteredScrollable&quot;&gt;
+  Vertically centered scrollable modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;exampleModalCenteredScrollable&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;exampleModalCenteredScrollableTitle&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog modal-dialog-centered modal-dialog-scrollable&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;h5 class=&quot;modal-title&quot; id=&quot;exampleModalCenteredScrollableTitle&quot;&gt;Modal title&lt;/h5&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        &lt;p&gt;This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.&lt;/p&gt;
+        &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+        &lt;p&gt;This content should appear at the bottom after you scroll.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-bs-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+              <pre><h4 id="scroll-modals4">&lt;Full Screen&gt;</h4><code class="language-html">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-bs-toggle=&quot;modal&quot; data-bs-target=&quot;#exampleModalFullscreen&quot;&gt;
+  Full screen
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class=&quot;modal fade&quot; id=&quot;exampleModalFullscreen&quot; tabindex=&quot;-1&quot; aria-labelledby=&quot;exampleModalFullscreenLabel&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog modal-fullscreen&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;h5 class=&quot;modal-title h4&quot; id=&quot;exampleModalFullscreenLabel&quot;&gt;Full screen modal&lt;/h5&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn-close&quot; data-bs-dismiss=&quot;modal&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        ...
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-bs-dismiss=&quot;modal&quot;&gt;Close&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            
+          </div>
+        </div>
+     </div>
+     
+     <!--Breadcrumb-->
+     <div class="col-md-6">
+       <div class="h3 p-5">
+         <nav aria-label="breadcrumb">
+           <ol class="breadcrumb">
+             <li class="breadcrumb-item active" aria-current="page">Home</li>
+           </ol>
+         </nav>
+         
+         <nav aria-label="breadcrumb">
+           <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="#">Home</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Library</li>
+           </ol>
+         </nav>
+         
+         <nav aria-label="breadcrumb">
+           <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="#">Home</a></li>
+             <li class="breadcrumb-item"><a href="#">Library</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Data</li>
+           </ol>
+         </nav>
+         
+         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+           <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="#">Home</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Divider one</li>
+           </ol>
+         </nav>
+         
+         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='13'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+           <ol class="breadcrumb">
+             <li class="breadcrumb-item"><a href="#">Home</a></li>
+             <li class="breadcrumb-item active" aria-current="page">Divider two</li>
+           </ol>
+         </nav>
+       </div>
+     </div>
+     <div id="breadcrumb" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/components/breadcrumb/" target="_blank">Breadcrumb</a></h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scroll-breadcrumb1">Breadcrumb</a></li>
+                  <li><a class="dropdown-item" href="#scroll-breadcrumb2">Divider One</a></li>
+                  <li><a class="dropdown-item" href="#scroll-breadcrumb3">Divider Two</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-breadcrumb1">&lt;Breadcrumb&gt;</h4><code class="language-html">
+&lt;nav aria-label=&quot;breadcrumb&quot;&gt;
+  &lt;ol class=&quot;breadcrumb&quot;&gt;
+    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Home&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+
+&lt;nav aria-label=&quot;breadcrumb&quot;&gt;
+  &lt;ol class=&quot;breadcrumb&quot;&gt;
+    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Library&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;
+
+&lt;nav aria-label=&quot;breadcrumb&quot;&gt;
+  &lt;ol class=&quot;breadcrumb&quot;&gt;
+    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Library&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Data&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+           
+              <pre><h4 id="scroll-breadcrumb2">&lt;Divider One&gt;</h4><code class="language-html">
+&lt;nav style=&quot;--bs-breadcrumb-divider: '&gt;';&quot; aria-label=&quot;breadcrumb&quot;&gt;
+  &lt;ol class=&quot;breadcrumb&quot;&gt;
+    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Library&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+            
+              <pre><h4 id="scroll-breadcrumb3">&lt;Divider Two&gt;</h4><code class="language-html">
+&lt;nav style=&quot;--bs-breadcrumb-divider: url(&amp;#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&amp;#34;);&quot; aria-label=&quot;breadcrumb&quot;&gt;
+  &lt;ol class=&quot;breadcrumb&quot;&gt;
+    &lt;li class=&quot;breadcrumb-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;breadcrumb-item active&quot; aria-current=&quot;page&quot;&gt;Library&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+
+          </div>
+        </div>
+     </div>
+     
+     <!--Pagination-->
+     <div class="col-md-6">
+       <div class="p-5">
+        <nav aria-label="Pagination example">
+          <ul class="pagination pagination-sm">
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Standard pagination example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Another pagination example">
+          <ul class="pagination pagination-lg flex-wrap">
+            <li class="page-item disabled">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+       </div>
+     </div>
+     <div id="pagination" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/components/pagination/" target="_blank">Pagination</a></h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scroll-pagination1">Pagination</a></li>
+                  <li><a class="dropdown-item" href="#scroll-pagination2">With Icons</a></li>
+                  <li><a class="dropdown-item" href="#scroll-pagination3">Sizing</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-pagination1">&lt;Pagination&gt;</h4><code class="language-html">
+&lt;nav aria-label=&quot;Pagination example&quot;&gt;
+  &lt;ul class=&quot;pagination pagination-sm&quot;&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item active&quot; aria-current=&quot;page&quot;&gt;
+      &lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+           
+              <pre><h4 id="scroll-pagination2">&lt;With Icons&gt;</h4><code class="language-html">
+&lt;nav aria-label=&quot;Standard pagination example&quot;&gt;
+  &lt;ul class=&quot;pagination&quot;&gt;
+    &lt;li class=&quot;page-item&quot;&gt;
+      &lt;a class=&quot;page-link&quot; href=&quot;#&quot; aria-label=&quot;Previous&quot;&gt;
+        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;laquo;&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;
+      &lt;a class=&quot;page-link&quot; href=&quot;#&quot; aria-label=&quot;Next&quot;&gt;
+        &lt;span aria-hidden=&quot;true&quot;&gt;&amp;raquo;&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            
+              <pre><h4 id="scroll-pagination3">&lt;Sizing&gt;</h4><code class="language-html">
+&lt;nav aria-label=&quot;Another pagination example&quot;&gt;
+  &lt;ul class=&quot;pagination pagination-lg flex-wrap&quot;&gt;
+    &lt;li class=&quot;page-item disabled&quot;&gt;
+      &lt;a class=&quot;page-link&quot;&gt;Previous&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item active&quot; aria-current=&quot;page&quot;&gt;
+      &lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&quot;page-item&quot;&gt;
+      &lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;Next&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            
+          </div>
+        </div>
+     </div>
+     
+     <!--Tables-->
+     <div class="p-5">
+       <div id="tables">
+         
+        <div class="table-ex py-3">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th scope="col">TABLE</th>
+            <th scope="col">ONE</th>
+            <th scope="col">Colors</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">Default</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          
+          <tr class="table-primary">
+            <th scope="row">Primary</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="table-secondary">
+            <th scope="row">Secondary</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="table-success">
+            <th scope="row">Success</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="table-danger">
+            <th scope="row">Danger</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="table-warning">
+            <th scope="row">Warning</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="table-info">
+            <th scope="row">Info</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="table-light">
+            <th scope="row">Light</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          <tr class="table-dark">
+            <th scope="row">Dark</th>
+            <td>Cell</td>
+            <td>Cell</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+         
+        <div class="table-ex py-3">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">TABLE</th>
+            <th scope="col">TWO</th>
+            <th scope="col">Striped</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="table-ex py-3">
+        <table class="table table-dark table-borderless">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">TABLE</th>
+            <th scope="col">THREE</th>
+            <th scope="col">Dark</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="table-ex py-3">
+        <table class="table table-sm table-bordered">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">TABLE</th>
+            <th scope="col">FOUR</th>
+            <th scope="col">Bordered</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+          </tbody>
+        </table>
+        </div>
+       </div>
+     </div>
+     <div class="p-5">
+       <div class="code">
+          <nav id="" class="navbar bg-dark px-3">
+            <h3><a href="https://getbootstrap.com/docs/5.1/content/tables/" target="_blank">Tables</a></h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#scroll-table1">Table One</a></li>
+                  <li><a class="dropdown-item" href="#scroll-table2">Table Two</a></li>
+                  <li><a class="dropdown-item" href="#scroll-table3">Table Three</a></li>
+                  <li><a class="dropdown-item" href="#scroll-table4">Table Four</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="scroll-table1">&lt;Table One&gt;</h4><code class="language-html">
+&lt;table class=&quot;table table-hover&quot;&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;TABLE&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;ONE&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Colors&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;Default&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  
+  &lt;tr class=&quot;table-primary&quot;&gt;
+    &lt;th scope=&quot;row&quot;&gt;Primary&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr class=&quot;table-secondary&quot;&gt;
+    &lt;th scope=&quot;row&quot;&gt;Secondary&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr class=&quot;table-success&quot;&gt;
+    &lt;th scope=&quot;row&quot;&gt;Success&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr class=&quot;table-danger&quot;&gt;
+    &lt;th scope=&quot;row&quot;&gt;Danger&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr class=&quot;table-warning&quot;&gt;
+    &lt;th scope=&quot;row&quot;&gt;Warning&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr class=&quot;table-info&quot;&gt;
+    &lt;th scope=&quot;row&quot;&gt;Info&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr class=&quot;table-light&quot;&gt;
+    &lt;th scope=&quot;row&quot;&gt;Light&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr class=&quot;table-dark&quot;&gt;
+    &lt;th scope=&quot;row&quot;&gt;Dark&lt;/th&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+    &lt;td&gt;Cell&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+           
+              <pre><h4 id="scroll-table2">&lt;Table Two &gt;</h4><code class="language-html">
+&lt;table class=&quot;table table-striped&quot;&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;#&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;TABLE&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;TWO&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Striped&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;1&lt;/th&gt;
+    &lt;td&gt;Mark&lt;/td&gt;
+    &lt;td&gt;Otto&lt;/td&gt;
+    &lt;td&gt;@mdo&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;2&lt;/th&gt;
+    &lt;td&gt;Jacob&lt;/td&gt;
+    &lt;td&gt;Thornton&lt;/td&gt;
+    &lt;td&gt;@fat&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;3&lt;/th&gt;
+    &lt;td colspan=&quot;2&quot;&gt;Larry the Bird&lt;/td&gt;
+    &lt;td&gt;@twitter&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            
+              <pre><h4 id="scroll-table3">&lt;Table Three&gt;</h4><code class="language-html">
+&lt;table class=&quot;table table-dark table-borderless&quot;&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;#&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;TABLE&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;THREE&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Dark&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;1&lt;/th&gt;
+    &lt;td&gt;Mark&lt;/td&gt;
+    &lt;td&gt;Otto&lt;/td&gt;
+    &lt;td&gt;@mdo&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;2&lt;/th&gt;
+    &lt;td&gt;Jacob&lt;/td&gt;
+    &lt;td&gt;Thornton&lt;/td&gt;
+    &lt;td&gt;@fat&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;3&lt;/th&gt;
+    &lt;td colspan=&quot;2&quot;&gt;Larry the Bird&lt;/td&gt;
+    &lt;td&gt;@twitter&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            
+              <pre><h4 id="scroll-table4">&lt;Table Four&gt;</h4><code class="language-html">
+&lt;table class=&quot;table table-sm table-bordered&quot;&gt;
+  &lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;col&quot;&gt;#&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;TABLE&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;FOUR&lt;/th&gt;
+    &lt;th scope=&quot;col&quot;&gt;Bordered&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;1&lt;/th&gt;
+    &lt;td&gt;Mark&lt;/td&gt;
+    &lt;td&gt;Otto&lt;/td&gt;
+    &lt;td&gt;@mdo&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;2&lt;/th&gt;
+    &lt;td&gt;Jacob&lt;/td&gt;
+    &lt;td&gt;Thornton&lt;/td&gt;
+    &lt;td&gt;@fat&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;th scope=&quot;row&quot;&gt;3&lt;/th&gt;
+    &lt;td colspan=&quot;2&quot;&gt;Larry the Bird&lt;/td&gt;
+    &lt;td&gt;@twitter&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            
+          </div>
+        </div>
+     </div>
+     
+     
+     <!--
+     <div class="col-md-6 py-5">
+       <div>
+         code
+       </div>
+     </div>
+     <div id="buttons" class="col-md-6 p-5 blank-space">
+       <div class="code">
+          <nav class="navbar navbar-light bg-light px-3">
+            <h3>Cards</h3>
+            <ul class="nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Navigate</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#1"></a></li>
+                  <li><a class="dropdown-item" href="#2"></a></li>
+                  <li><a class="dropdown-item" href="#3"></a></li>
+                  <li><a class="dropdown-item" href="#4"></a></li>
+                  <li><a class="dropdown-item" href="#5"></a></li>
+                  <li><a class="dropdown-item" href="#6"></a></li>
+                  <li><a class="dropdown-item" href="#7"></a></li>
+                  <li><a class="dropdown-item" href="#8"></a></li>
+                  <li><a class="dropdown-item" href="#9"></a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        <div class="scrollspy-example">
+              <pre><h4 id="1">&lt;Lead&gt;</h4><code class="language-html">
+&lt;p class=&quot;lead&quot;&gt;This is a lead paragraph. It stands out from regular paragraphs.&lt;/p&gt;</code></pre>
+           
+              <pre><h4 id="2">&lt;Mark&gt;</h4><code class="language-html">
+&lt;p&gt;You can use the mark tag to &lt;mark&gt;highlight&lt;/mark&gt; text.&lt;/p&gt;</code></pre>
+            
+              <pre><h4 id="3">&lt;Del&gt;</h4><code class="language-html">
+&lt;p&gt;&lt;del&gt;This line of text is meant to be treated as deleted text.&lt;/del&gt;&lt;/p&gt;</code></pre>
+            
+              <pre><h4 id="4">&lt;S&gt;</h4><code class="language-html">
+&lt;p&gt;&lt;s&gt;This line of text is meant to be treated as no longer accurate.&lt;/s&gt;&lt;/p&gt;</code></pre>
+            
+              <pre><h4 id="5">&lt;Ins&gt;</h4><code class="language-html">
+&lt;p&gt;&lt;ins&gt;This line of text is meant to be treated as an addition to the document.&lt;/ins&gt;&lt;/p&gt;</code></pre>
+              
+              <pre><h4 id="6">&lt;U&gt;</h4><code class="language-html">
+&lt;p&gt;&lt;u&gt;This line of text will render as underlined.&lt;/u&gt;&lt;/p&gt;</code></pre>
+              
+              <pre><h4 id="7">&lt;Small&gt;</h4><code class="language-html">
+&lt;p&gt;&lt;small&gt;This line of text is meant to be treated as fine print.&lt;/small&gt;&lt;/p&gt;</code></pre>
+              
+              <pre><h4 id="8">&lt;Strong&gt;</h4><code class="language-html">
+&lt;p&gt;&lt;strong&gt;This line rendered as bold text.&lt;/strong&gt;&lt;/p&gt;</code></pre>
+              
+              <pre><h4 id="9">&lt;Em&gt;</h4><code class="language-html">
+&lt;p&gt;&lt;em&gt;This line rendered as italicized text.&lt;/em&gt;&lt;/p&gt;</code></pre>
+              
+          </div>
+        </div>
+     </div>
+     -->
+     
+     
+     
+    </div>
+  </section>
+  
+  
+  <!--======== MODAL =========-->
+<div class="modal fade" id="exampleModalDefault" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Modal body text goes here..
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="staticBackdropLive" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLiveLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLiveLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>I will not close if you click outside me. Don't even try to press escape key.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalCenteredScrollable" tabindex="-1" aria-labelledby="exampleModalCenteredScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>This is some placeholder content to show the scrolling behavior for modals. We use repeated line breaks to demonstrate how content can exceed minimum inner height, thereby showing inner scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>This content should appear at the bottom after you scroll.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title h4" id="exampleModalFullscreenLabel">Full screen modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!--============ FOOTER ==============-->
+  <footer class="p-2 bg-dark text-white text-center position-relative">
+      <p class="lead text-info"><strong>Coded By</strong> <a href="https://devshanemantua.github.io/ShaneM-Portfolio/" target="_blank">Shane Del Moira Mantua</p>
+      <a href="#" class="position-absolute bottom-0 end-0 p-2 px-5">
+        <i class="bi bi-arrow-up-circle h1 text-info"></i></a>
+  </footer>
+  <!--==================== BOOTSTRAP JS ====================-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
